@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>時間</title>
+        <style>
+            #time{
+                position:absolute;
+                top:50%;
+                left:50%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 id="time"></h1>
+        <script>
+            setInterval(() => {
+                const time = new Date(),
+                h1 = document.querySelector("#time"),
+                time2 = `${("0" + time.getHours()).slice(-2)}:${("0" + time.getMinutes).slice(-2)}:${("0" + time.getSeconds).slice(-2)}.${time.getMilliseconds}`;
+            });
+        </script>
+    </body>
+
+</html>
