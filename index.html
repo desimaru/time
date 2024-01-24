@@ -20,7 +20,7 @@
             setInterval(() => {
                 const time = new Date(),
                 h1 = document.querySelector("#time"),
-                time2 = `${("0" + time.getHours()).slice(-2)}:${("0" + time.getMinutes()).slice(-2)}`;
+                time2 = `${("0" + time.getHours()).slice(-2)}:${("0" + time.getMinutes()).slice(-2)}:${("0" + time.getSeconds()).slice(-2)}`;
                 h1.innerHTML=time2;
             });
         </script>
