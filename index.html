@@ -30,9 +30,9 @@
             setInterval(() => {
                 const time = new Date(),
                 h1 = document.querySelector("h1");
-                let time2 = `${("0" + time.getHours()).slice(-2)}:${("0" + time.getMinutes()).slice(-2)}:${("0" + time.getSeconds()).slice(-2)}`;
+                let time2 = time.toLocaleTimeString();
                 if (document.querySelector("input").checked) {
-                    time2 = `${time.getFullYear()}/${("0" + (time.getMonth() + 1)).slice(-2)}/${("0" + time.getDate()).slice(-2)} `+time2;
+                    time2 =time.toLocaleDateString()+" "+time2;
                 }
                 if (document.querySelector("#ms").checked) {
                     time2 += "." + `00${time.getMilliseconds()}`.slice(-3);
