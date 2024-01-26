@@ -6,41 +6,34 @@
         <meta charset="UTF-8" />
         <title>時刻</title>
         <style>
-            body{
+            body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
             }
-            label,input{
+            
+            label, input {
                 user-select: none;
                 cursor: pointer;
+            }
+            
+            h1 {
+                font-size: 80px;
             }
         </style>
     </head>
 
     <body>
+        <label><input type="radio" name="time" id="utc" />UTC</label>
+        <label><input type="radio" name="time" id="local">JST</label>
         <h1></h1>
         <div>
             <label><input type="checkbox" name="year" id="year" />年/月/日</label>
             <br />
             <label><input type="checkbox" name="milisec" id="ms" />ミリ秒</label>
         </div>
-        <script>
-            setInterval(() => {
-                const time = new Date(),
-                h1 = document.querySelector("h1");
-                let time2 ="";
-                if (document.querySelector("input").checked) {
-                    time2 += time.toLocaleDateString()+" ";
-                }
-                time2 += time.toLocaleTimeString();
-                if (document.querySelector("#ms").checked) {
-                    time2 += "." + `00${time.getMilliseconds()}`.slice(-3);
-                }
-                h1.innerHTML = time2;
-            });
-        </script>
+        <script src="./index.js"></script>
     </body>
 
 </html>
