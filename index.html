@@ -30,10 +30,11 @@
             setInterval(() => {
                 const time = new Date(),
                 h1 = document.querySelector("h1");
-                let time2 = time.toLocaleTimeString();
+                let time2 ="";
                 if (document.querySelector("input").checked) {
-                    time2 = time.toLocaleDateString() + " " + time2;
+                    time2 += time.toLocaleDateString();
                 }
+                time2 += time.toLocaleTimeString();
                 if (document.querySelector("#ms").checked) {
                     time2 += "." + `00${time.getMilliseconds()}`.slice(-3);
                 }
