@@ -61,13 +61,11 @@ setInterval(() => {
                 a = "土曜日";
         }
         if (document.querySelector("#year").checked) {
-            time2 += `${time.getUTCFullYear()}/${
-                time.getUTCMonth() + 1
-            }/${time.getUTCDate()} ${a} `;
+            time2 += `${time.getUTCFullYear()}/${`0${time.getUTCMonth() + 1}`.slice(-2)}/${`0${time.getUTCDate()}`.slice(-2)} ${a} `;
         }
-        time2 += `${time.getUTCHours()}:${time.getUTCMinutes()}:${time.getUTCSeconds()}`;
+        time2 += `${`0${time.getUTCHours()}`.slice(-2)}:${time.getUTCMinutes()}:${time.getUTCSeconds()}`;
         if (document.querySelector("#ms").checked) {
-            time2 += "." + `00${time.getUTCMilliseconds()}`.slice(-3);
+            time2 += `.${'00${time.getUTCMilliseconds()}'}`.slice(-3);
         }
         h1.innerHTML = time2;
     }
