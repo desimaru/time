@@ -65,7 +65,7 @@ setInterval(() => {
         }
         time2 += `${`0${time.getUTCHours()}`.slice(-2)}:${time.getUTCMinutes()}:${time.getUTCSeconds()}`;
         if (document.querySelector("#ms").checked) {
-            time2 += `.${'00${time.getUTCMilliseconds()}'}`.slice(-3);
+            time2 += `.${`00${time.getUTCMilliseconds()}`}`.slice(-3);
         }
         h1.innerHTML = time2;
     }
