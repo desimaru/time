@@ -33,7 +33,7 @@ setInterval(() => {
         }
         time2 += time.toLocaleTimeString("ja");
         if (document.querySelector("#ms").checked) {
-            time2 +=`.${00`${time.getMilliseconds()}`.slice(-3)}`;
+            time2 +=`.${`00${time.getMilliseconds()}`.slice(-3)}`;
         }
         h1.innerHTML = time2;
     } else if (document.querySelector("#utc").checked) {
