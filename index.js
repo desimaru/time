@@ -2,8 +2,8 @@ document.querySelector("#local").checked = true;
 setInterval(() => {
     const time = new Date(),
         h1 = document.querySelector("h1");
-    let time2 = "";
-    let a = "";
+    let time2 = "",
+    a = "";
     if (document.querySelector("#local").checked) {
         if (document.querySelector("#year").checked) {
             a = "";
@@ -33,7 +33,7 @@ setInterval(() => {
         }
         time2 += time.toLocaleTimeString("ja");
         if (document.querySelector("#ms").checked) {
-            time2 += "." + `00${time.getMilliseconds()}`.slice(-3);
+            time2 +=`.${00`${time.getMilliseconds()}`.slice(-3)}`;
         }
         h1.innerHTML = time2;
     } else if (document.querySelector("#utc").checked) {
@@ -65,7 +65,7 @@ setInterval(() => {
         }
         time2 += `${`0${time.getUTCHours()}`.slice(-2)}:${time.getUTCMinutes()}:${time.getUTCSeconds()}`;
         if (document.querySelector("#ms").checked) {
-            time2 += `.${`00${time.getUTCMilliseconds()}`}`.slice(-3);
+            time2 += `.${`00${time.getUTCMilliseconds()}`.slice(-3)}`;
         }
         h1.innerHTML = time2;
     }
