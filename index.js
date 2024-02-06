@@ -1,9 +1,9 @@
 document.querySelector("#local").checked = true;
+setInterval(() => {
     const time = new Date(),
         h1 = document.querySelector("h1");
     let time2 = "",
         a = "";
-setInterval(() => {
     if (document.querySelector("#local").checked) {
         if (document.querySelector("#year").checked) {
             a = "";
@@ -30,8 +30,6 @@ setInterval(() => {
                     a = "土曜日";
             }
             time2 += `${time.toLocaleDateString()} ${a} `;
-        }else{
-            h1.style.fontSize="100px";
         }
         time2 += time.toLocaleTimeString("ja");
         if (document.querySelector("#ms").checked) {
