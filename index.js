@@ -6,7 +6,6 @@ document.querySelector("#local").checked = true;
 setInterval(() => {
     if (document.querySelector("#local").checked) {
         if (document.querySelector("#year").checked) {
-            h1.style.fontSize="80px"
             a = "";
             switch (time.getDay()) {
                 case 0:
