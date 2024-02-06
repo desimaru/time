@@ -3,11 +3,7 @@ document.querySelector("#local").checked = true;
         h1 = document.querySelector("h1");
     let time2 = "",
         a = "";
-setInterval(() => {
-    if (document.querySelector("#local").checked) {
-        if (document.querySelector("#year").checked) {
-            h1.style.fontSize="80px";
-            a = "";
+setInterval(() => {a = "";
             switch (time.getDay()) {
                 case 0:
                     a = "日曜日";
@@ -30,6 +26,10 @@ setInterval(() => {
                 case 6:
                     a = "土曜日";
             }
+    if (document.querySelector("#local").checked) {
+        if (document.querySelector("#year").checked) {
+            h1.style.fontSize="80px";
+            
             time2 += `${time.toLocaleDateString()} ${a} `;
         }else{
             h1.style.fontSize="100px";
@@ -41,7 +41,7 @@ setInterval(() => {
         h1.innerHTML = time2;
     } else if (document.querySelector("#utc").checked) {
         a = "";
-        switch (time.getDay()) {
+        switch (time.getUTCDay()) {
             case 0:
                 a = "日曜日";
                 break;
