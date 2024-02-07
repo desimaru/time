@@ -29,8 +29,13 @@ setInterval(() => {
                 case 6:
                     a = "土曜日";
             }
-            time2 += `${time.toLocaleDateString()} ${a} `;
-        }
+            time2 += time.toLocaleDateString() + a;
+            if (!document.querySelector("#ms")) {
+                h1.style.fontSize = "100px";
+            } else {
+                h1.style.fontSize = "80px";
+            }
+        } else h1.style.fontSize = "150px";
         time2 += time.toLocaleTimeString("ja");
         if (document.querySelector("#ms").checked) {
             time2 += `.${`00${time.getMilliseconds()}`.slice(-3)}`;
