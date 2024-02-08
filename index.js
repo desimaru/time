@@ -10,7 +10,8 @@ const body = document.querySelector("body"),
 let time2 = "",
     a = "";
 local.checked = true;
-document.getElementById("color2").value = "#FFFFFF";
+color2.value = "#FFFFFF";
+number.value = 80;
 setInterval(() => {
     const time = new Date();
     time2 = "";
@@ -39,7 +40,9 @@ setInterval(() => {
                 case 6:
                     a = "土曜日";
             };
-            time2 += time.toLocaleDateString() + a;
+            time2 += `${
+                time.getFullYear()
+            }/${`0${time.getMonth()}`.slice(-2)}/${`0${time.getDate()}`.slice(-2)} ${a} `;
         };
         time2 += time.toLocaleTimeString("ja");
         if (ms.checked) {
