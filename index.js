@@ -13,6 +13,7 @@ local.checked = true;
 document.getElementById("color2").value = "#FFFFFF";
 setInterval(() => {
     const time = new Date();
+    time2 = "";
     if (local.checked) {
         if (year.checked) {
             a = "";
