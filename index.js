@@ -40,9 +40,8 @@ setInterval(() => {
                 case 6:
                     a = "土曜日";
             };
-            time2 += `${
-                time.getFullYear()
-            }/${`0${time.getMonth()}`.slice(-2)}/${`0${time.getDate()}`.slice(-2)} ${a} `;
+            time2 += `${time.getFullYear()
+                }/${`0${time.getMonth() + 1}`.slice(-2)}/${`0${time.getDate()}`.slice(-2)} ${a} `;
         };
         time2 += time.toLocaleTimeString("ja");
         if (ms.checked) {
@@ -73,9 +72,8 @@ setInterval(() => {
                 a = "土曜日";
         };
         if (year.checked) {
-            time2 += `${time.getUTCFullYear()}/${`0${
-                time.getUTCMonth() + 1
-            }`.slice(-2)}/${`0${time.getUTCDate()}`.slice(-2)} ${a} `;
+            time2 += `${time.getUTCFullYear()}/${`0${time.getUTCMonth() + 1
+                }`.slice(-2)}/${`0${time.getUTCDate()}`.slice(-2)} ${a} `;
         };
         time2 += `${`0${time.getUTCHours()}`.slice(
             -2
