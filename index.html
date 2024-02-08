@@ -26,13 +26,24 @@
     </head>
 
     <body>
-        <label><input type="radio" name="time" id="utc" />世界標準時</label>
-        <label><input type="radio" name="time" id="local">現地時刻</label>
+        <div>
+            <label><input type="radio" name="time" id="utc" />世界標準時</label>
+            <br />
+            <label><input type="radio" name="time" id="local">現地時刻</label>
+        </div>
         <h1></h1>
         <div>
-            <label><input type="checkbox" name="year" id="year" />年/月/日</label>
+            <label><input type="checkbox" name="year" id="year" />年月日</label>
             <br />
             <label><input type="checkbox" name="milisec" id="ms" />ミリ秒</label>
+        </div>
+        <div>
+            <label><input type="color" id="color" />文字色</label>
+            <br />
+            <label><input type="color" id="color2" />背景色</label>
+        </div>
+        <div>
+            <label>文字サイズ<input type="number" id="number" /></label>
         </div>
         <script src="./index.js"></script>
     </body>
