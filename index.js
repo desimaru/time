@@ -38,13 +38,13 @@ setInterval(() => {
                     break;
                 case 6:
                     a = "土曜日";
-            }
+            };
             time2 += time.toLocaleDateString() + a;
-        }
+        };
         time2 += time.toLocaleTimeString("ja");
         if (ms.checked) {
             time2 += `.${`00${time.getMilliseconds()}`.slice(-3)}`;
-        }
+        };
     } else if (utc.checked) {
         a = "";
         switch (time.getUTCDay()) {
@@ -68,21 +68,21 @@ setInterval(() => {
                 break;
             case 6:
                 a = "土曜日";
-        }
+        };
         if (year.checked) {
             time2 += `${time.getUTCFullYear()}/${`0${
                 time.getUTCMonth() + 1
             }`.slice(-2)}/${`0${time.getUTCDate()}`.slice(-2)} ${a} `;
-        }
+        };
         time2 += `${`0${time.getUTCHours()}`.slice(
             -2
         )}:${time.getUTCMinutes()}:${time.getUTCSeconds()}`;
         if (ms.checked) {
             time2 += `.${`00${time.getUTCMilliseconds()}`.slice(-3)}`;
-        }
+        };
     }
     h1.innerHTML = time2;
     body.style.color = color.value;
     body.style.backgroundColor = color2.value;
-    h1.style.fontSize = document.getElementById("number").value;
+    h1.style.fontSize = number.value;
 });
