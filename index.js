@@ -84,5 +84,5 @@ setInterval(() => {
     h1.innerHTML = time2;
     body.style.color = color.value;
     body.style.backgroundColor = color2.value;
-    h1.style.fontSize = number.value;
+    h1.style.fontSize = `${number.value}px`;
 });
