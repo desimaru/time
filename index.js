@@ -1,5 +1,8 @@
+/**@type {HTMLBodyElement} */
 const body = document.querySelector("body"),
+    /**@type {HTMLHeadingElement} */
     h1 = document.querySelector("h1"),
+    /**@type {HTMLFormElement} */
     local = document.getElementById("local"),
     utc = document.getElementById("utc"),
     year = document.getElementById("year"),
@@ -7,15 +10,28 @@ const body = document.querySelector("body"),
     color = document.getElementById("color"),
     color2 = document.getElementById("color2"),
     number = document.getElementById("number");
+/**
+ * 表示する時間
+ * @type {String}
+*/
 let time2 = "",
+    /**
+     * 曜日
+     * @type {String}
+     */
     a = "";
 local.checked = true;
 color2.value = "#FFFFFF";
 number.value = 80;
 setInterval(() => {
+    /**
+     * 現在の時刻
+     * @type {Date}
+     */
     const time = new Date();
     time2 = "";
     if (local.checked) {
+        // 現地時間にチェックが入ってる時
         if (year.checked) {
             a = "";
             switch (time.getDay()) {
@@ -48,6 +64,7 @@ setInterval(() => {
             time2 += `.${`00${time.getMilliseconds()}`.slice(-3)}`;
         };
     } else if (utc.checked) {
+        // 世界標準時にチェックが入ってる時
         a = "";
         switch (time.getUTCDay()) {
             case 0:
@@ -82,8 +99,10 @@ setInterval(() => {
             time2 += `.${`00${time.getUTCMilliseconds()}`.slice(-3)}`;
         };
     }
+    // h1に反映する
     h1.innerHTML = time2;
+    h1.style.fontSize = `${number.value}px`;
+    // bodyのスタイルを変える
     body.style.color = color.value;
     body.style.backgroundColor = color2.value;
-    h1.style.fontSize = `${number.value}px`;
 });
