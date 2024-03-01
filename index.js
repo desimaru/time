@@ -2,14 +2,8 @@
 const body = document.querySelector("body"),
     /**@type {HTMLHeadingElement} */
     h1 = document.querySelector("h1"),
-    /**@type {HTMLFormElement} */
-    local = document.getElementById("local"),
-    utc = document.getElementById("utc"),
-    year = document.getElementById("year"),
-    ms = document.getElementById("ms"),
-    color = document.getElementById("color"),
-    color2 = document.getElementById("color2"),
-    number = document.getElementById("number");
+    /**@type {HTMLInputElement} */
+    [local, utc, year, ms, color, color2, number] = document.getElementsByTagName("input");
 /**
  * 表示する時間
  * @type {String}
@@ -25,7 +19,8 @@ color2.value = "#FFFFFF";
 number.value = 80;
 /**
  * 曜日判別
- * @param {number} date
+ * @param {number} date [1-6]
+ * @returns {string} 曜日
  */
 function day(date) {
     switch (date) {
@@ -69,9 +64,8 @@ setInterval(() => {
         // 世界標準時にチェックが入ってる時
         a = day(time.getUTCDay());
         if (year.checked) {
-            time2 += `${time.getUTCFullYear()}/${`0${
-                time.getUTCMonth() + 1
-            }`.slice(-2)}/${`0${time.getUTCDate()}`.slice(-2)} ${a} `;
+            time2 += `${time.getUTCFullYear()}/${`0${time.getUTCMonth() + 1
+                }`.slice(-2)}/${`0${time.getUTCDate()}`.slice(-2)} ${a} `;
         }
         // `(年)/(月)/(日) (曜日)
         time2 += `${`0${time.getUTCHours()}`.slice(
