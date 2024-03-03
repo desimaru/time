@@ -3,7 +3,8 @@ const body = document.querySelector("body"),
     /**@type {HTMLHeadingElement} */
     h1 = document.querySelector("h1"),
     /**@type {HTMLInputElement} */
-    [utc, local, year, ms, color, color2, number] = document.getElementsByTagName("input");
+    [utc, local, year, ms, color, color2, number] =
+        document.getElementsByTagName("input");
 /**
  * 表示する時間
  * @type {string}
@@ -54,7 +55,8 @@ setInterval(() => {
             time2 += `${time.getFullYear()}/${`0${time.getMonth() + 1}`.slice(
                 -2
             )}/${`0${time.getDate()}`.slice(-2)} ${day(time.getDay())}曜日 `;
-        } else time2 += time.toLocaleTimeString();
+        }
+        time2 += time.toLocaleTimeString();
         if (ms.checked) {
             time2 += `.${`00${time.getMilliseconds()}`.slice(-3)}`;
         }
@@ -71,7 +73,9 @@ setInterval(() => {
         // (時)/(分)/(秒)
         time2 += `${`0${time.getUTCHours()}`.slice(
             -2
-        )}:${`0${time.getUTCMinutes()}`.slice(-2)}:${time.getUTCSeconds()}`;
+        )}:${`0${time.getUTCMinutes()}`.slice(
+            -2
+        )}:${`0${time.getUTCSeconds()}`.slice(-2)}`;
         if (ms.checked) {
             time2 += `.${`00${time.getUTCMilliseconds()}`.slice(-3)}`;
         }
