@@ -2,7 +2,7 @@
 const body = document.querySelector("body"),
     /**@type {HTMLHeadingElement} */
     h1 = document.querySelector("h1"),
-    /**@type {HTMLInputElement} */
+    /**@type {HTMLInputElement[]} */
     [utc, local, year, ms, color, color2, number] =
         document.getElementsByTagName("input");
 /**
