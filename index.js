@@ -1,3 +1,4 @@
+{
 /**@type {HTMLBodyElement} */
 const body = document.querySelector("body"),
     /**@type {HTMLHeadingElement} */
@@ -18,29 +19,6 @@ let time2 = "",
 local.checked = true;
 color2.value = "#FFFFFF";
 number.value = 80;
-/**
- * 曜日判別
- * @param {1|2|3|4|5|6} date
- * @returns {"日"|"月"|"火"|"水"|"木"|"金"|"土"} 曜日
- */
-function day(date) {
-    switch (date) {
-        case 0:
-            return "日";
-        case 1:
-            return "月";
-        case 2:
-            return "火";
-        case 3:
-            return "水";
-        case 4:
-            return "木";
-        case 5:
-            return "金";
-        case 6:
-            return "土";
-    }
-}
 setInterval(() => {
     /**
      * 現在の時刻
@@ -54,7 +32,7 @@ setInterval(() => {
             // `(年)/(月)/(日) (曜日)
             time2 += `${time.getFullYear()}/${`0${time.getMonth() + 1}`.slice(
                 -2
-            )}/${`0${time.getDate()}`.slice(-2)} ${day(time.getDay())}曜日 `;
+            )}/${`0${time.getDate()}`.slice(-2)} ${["日","月","火","水","木","金","土"][time.getDay()]}曜日 `;
         }
         time2 += time.toLocaleTimeString();
         if (ms.checked) {
@@ -63,12 +41,10 @@ setInterval(() => {
     } else if (utc.checked) {
         // 世界標準時にチェックが入ってる時
         if (year.checked) {
-            // (年)/(月)/(日) (曜日)
+           // (年)/(月)/(日) (曜日)
             time2 += `${time.getUTCFullYear()}/${`0${
                 time.getUTCMonth() + 1
-            }`.slice(-2)}/${`0${time.getUTCDate()}`.slice(-2)} ${day(
-                time.getUTCDay()
-            )}曜日 `;
+            }`.slice(-2)}/${`0${time.getUTCDate()}`.slice(-2)} ${["日","月","火","水","木","金","土"][time.getUTCDay()]}曜日 `;
         }
         // (時)/(分)/(秒)
         time2 += `${`0${time.getUTCHours()}`.slice(
@@ -87,3 +63,4 @@ setInterval(() => {
     body.style.color = color.value;
     body.style.backgroundColor = color2.value;
 });
+}
