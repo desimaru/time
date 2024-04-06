@@ -34,7 +34,7 @@ setInterval(() => {
                 -2
             )}/${`0${time.getDate()}`.slice(-2)} ${["日","月","火","水","木","金","土"][time.getDay()]}曜日 `;
         }
-        time2 += time.toLocaleTimeString();
+        time2 += time.toLocaleTimeString("ja");
         if (ms.checked) {
             time2 += `.${`00${time.getMilliseconds()}`.slice(-3)}`;
         }
