@@ -44,7 +44,7 @@ setInterval(() => {
            // (年)/(月)/(日) (曜日)
             time2 += `${time.getUTCFullYear()}/${`0${
                 time.getUTCMonth() + 1
-            }`.slice(-2)}/${`0${time.getUTCDate()}`.slice(-2)} ${["日","月","火","水","木","金","土"][time.getUTCDay()]}曜日 `;
+            }`.slice(-2)}/${`0${time.getUTCDate()}`.slice(-2)} ${"日月火水木金土"[time.getUTCDay()]}曜日 `;
         }
         // (時)/(分)/(秒)
         time2 += `${`0${time.getUTCHours()}`.slice(
