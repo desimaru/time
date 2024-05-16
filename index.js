@@ -32,7 +32,7 @@ setInterval(() => {
             // `(年)/(月)/(日) (曜日)
             time2 += `${time.getFullYear()}/${`0${time.getMonth() + 1}`.slice(
                 -2
-            )}/${`0${time.getDate()}`.slice(-2)} ${["日","月","火","水","木","金","土"][time.getDay()]}曜日 `;
+            )}/${`0${time.getDate()}`.slice(-2)} ${"日月火水木金土"[time.getDay()]}曜日 `;
         }
         time2 += time.toLocaleTimeString("ja");
         if (ms.checked) {
