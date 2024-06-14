@@ -4,15 +4,15 @@
 
     <head>
         <meta charset="UTF-8" />
+        <meta name="description" content="デジタル時計を表示します。" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>時刻</title>
+        <title>デジタル時計</title>
         <style>
             body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                -webkit-user-select: none;
                 user-select: none;
                 color: black;
                 background-color: white;
@@ -20,10 +20,6 @@
             
             label, input {
                 cursor: pointer;
-            }
-            
-            h1 {
-                font-size: 80px;
             }
         </style>
     </head>
@@ -39,6 +35,8 @@
             <label><input type="checkbox" />年月日</label>
             <br />
             <label><input type="checkbox" />ミリ秒</label>
+            <br />
+            <label><input type="checkbox">24時間表記</label>
         </div>
         <div>
             <label><input type="color" />文字色</label>
@@ -46,7 +44,9 @@
             <label><input type="color" />背景色</label>
         </div>
         <div>
-            <label>文字サイズ<input type="number" /></label>
+            <label><input type="number" />文字サイズ</label>
+            <br />
+            <label><input type="number" min="1" max="10000" />ミリ秒ごとに更新する</label>
         </div>
         <script src="./index.js"></script>
     </body>
