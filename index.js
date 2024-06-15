@@ -73,7 +73,7 @@ rate.value = 200;
             if (ms.checked) {
                 time += `.${`00${DATE_TIME.getUTCMilliseconds()}`.slice(-3)}`;
             }
-            if (format.checked) {
+            if (!format.checked) {
                 time += DATE_TIME.toLocaleTimeString("en").slice(-3);
             }
         }
